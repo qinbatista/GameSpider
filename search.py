@@ -1,9 +1,9 @@
 import os
 import time
 import subprocess
-from library.tool.data_manage import read_json
-from library.tool.data_manage import save_json
-from library.tool.data_manage import save_excel
+from CodeLibrary.tool.data_manage import read_json
+from CodeLibrary.tool.data_manage import save_json
+from CodeLibrary.tool.data_manage import save_excel
 import shutil
 PATH = os.path.join(os.path.dirname(__file__))
 
@@ -16,10 +16,10 @@ class AppFinder:
     def __init__(self, apps):
         self.apps = apps
         self.spiders = []
-        self.spider_dir = os.path.join(PATH, 'library/spider')
+        self.spider_dir = os.path.join(PATH, 'CodeLibrary/spider')
         self.caches = {}
-        self.cache_dir = os.path.join(PATH, f'library/cache')
-        self.result_dir = os.path.join(PATH, f'library/result')
+        self.cache_dir = os.path.join(PATH, f'CodeLibrary/cache')
+        self.result_dir = os.path.join(PATH, f'CodeLibrary/result')
         self.timestamp = f'{time.time()}'.replace('.', '')
         self.cmd = 'python' if os.name == 'nt' else 'python3'
 
